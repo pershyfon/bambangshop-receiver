@@ -45,7 +45,8 @@ impl NotificationService{
                 Ok(x) => Ok(x),
                 Err(y) => Err(compose_error_response(
                     Status::NotAcceptable,
-                    y.to_string()))
+                    y.to_string()
+                ))
             },
             Err(e) => Err(compose_error_response(
                 Status::NotFound,
@@ -88,5 +89,10 @@ impl NotificationService{
                 e.to_string()
             ))
         }
+    }
+
+    pub fn receive_notification(payload: Notification) -> Result<Notification> {
+        let subscriber_result: Notification = NotificationRepository::add(payload);
+        return Ok(subscriber_result);
     }
 }
