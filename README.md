@@ -85,5 +85,7 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1. RwLock<> digunakan daripada Mutex<> karena RwLock<Vec> dapat read atau write notification list (banyak reader atau satu writer) secara concurrently yang akan meningkatkan performance program. Sedangkan Mutex<> harus satu thread saja untuk read/write.
+2. Rust tidak mengizinkan mutable karena Rust menjaga safety dan reliability secara concurrent dibandingkan Java. Static variable mutable tidak dapat diubah setelah inisialisasi, hal ini dilakukan supaya tidak terjadi data race.
 
 #### Reflection Subscriber-2
