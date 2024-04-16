@@ -89,3 +89,6 @@ This is the place for you to write reflections:
 2. Rust tidak mengizinkan mutable karena Rust menjaga safety dan reliability secara concurrent dibandingkan Java. Static variable mutable tidak dapat diubah setelah inisialisasi, hal ini dilakukan supaya tidak terjadi data race.
 
 #### Reflection Subscriber-2
+1. Sudah. Pada src/lib.rs, terdapat konfigurasi dan dependensi aplikasi serta inisialisasi REQWEST_CLIENT dan APP_CONFIG yang digunakan pada kode.
+2. Observer pattern memudahkan kita dalam menambahkan subscriber tambahan ke sistem notifikasi sehingga code architecturenya akan lebih fleksibel dan scalable karena Observer pattern dipisah berdasarkan publisher dan observernya. Spawning lebih dari 1 instance main app akan mudah dilakukan karena terdapat parallel processing untuk notification untuk membuat kode lebih efisien.
+3. Test dan enchance documentation on Postman collection akan berguna dalam mengerjakan tugas kelompok karena dapat mengetes API endpoint dan menganalisis responsnya secara otomatis.
